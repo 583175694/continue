@@ -1,7 +1,7 @@
 {
   "name": "CodeMaster",
   "icon": "media/extensionIcon.png",
-  "version": "1.0.28",
+  "version": "1.0.36",
   "extensionKind": [
     "ui",
     "workspace"
@@ -12,7 +12,7 @@
   "description": "Open-source autopilot - build your own AI software development system",
   "publisher": "Kyroswu",
   "engines": {
-    "vscode": "1.70.0",
+    "vscode": "^1.70.0",
     "node": ">=20.11.0"
   },
   "engine-strict": true,
@@ -519,9 +519,7 @@
     "monaco-editor": "^0.45.0",
     "monaco-vscode-textmate-theme-converter": "^0.1.7",
     "ncp": "^2.0.0",
-    "node-addon-api": "^8.0.0",
     "node-fetch": "^3.3.2",
-    "node-gyp": "^10.1.0",
     "node-machine-id": "^1.1.12",
     "react-markdown": "^8.0.7",
     "react-redux": "^8.0.5",

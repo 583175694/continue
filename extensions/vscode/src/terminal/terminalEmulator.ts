@@ -184,7 +184,6 @@ export class CapturedTerminal {
       cwd: getRootDir(),
       env,
       useConpty: true,
-      shell: true
     });
 
     this.writeEmitter = new vscode.EventEmitter<string>();

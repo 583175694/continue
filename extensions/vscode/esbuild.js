@@ -1,4 +1,4 @@
-const esbuild = require("esbuild");
+const esbuild = require('esbuild');
 
 const flags = process.argv.slice(2);
 
@@ -27,6 +27,7 @@ const esbuildConfig = {
     const ctx = await esbuild.context(esbuildConfig);
     await ctx.watch();
   } else {
+    console.log('[info] esbuild...');
     await esbuild.build(esbuildConfig);
   }
 })();

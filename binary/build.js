@@ -10,7 +10,7 @@ const architectures = ["x64", "arm64"];
 //   architectures.map((arch) => `${platform}-${arch}`),
 // );
 
-let targets = ["darwin-x64", "win32-x64", "darwin-arm64"];
+let targets = ["win32-x64"];
 
 let esbuildOnly = false;
 for (let i = 2; i < process.argv.length; i++) {

@@ -286,7 +286,7 @@ class VsCodeIde implements IDE {
       ),
       ["-i", "-C", "2", "--", `${query}`, "."], //no regex
       //["-i", "-C", "2", "-e", `${query}`, "."], //use regex
-      { cwd: dir, shell: true },
+      { cwd: dir },
     );
     let output = "";
 
