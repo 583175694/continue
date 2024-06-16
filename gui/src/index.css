@@ -1,0 +1,348 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --secondary-dark: rgb(37, 37, 38);
+  --vsc-background: rgb(30, 30, 30);
+  --button-color: rgb(113, 28, 59);
+  --button-color-hover: rgba(113, 28, 59, 0.667);
+  --def-border-radius: 5px;
+
+  --vscode-editor-background: rgb(30, 30, 30);
+  --vscode-editor-foreground: rgb(197, 200, 198);
+  --vscode-textBlockQuote-background: rgba(255, 255, 255, 1);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  background-color: var(--vscode-editor-background);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  padding: 0;
+  color: var(--vscode-editor-foreground);
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
+}
+
+a:focus {
+  outline: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in-span {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* 下边是CodeMaster样式 */
+.code {
+  white-space: pre;
+}
+
+input {
+  background: var(--vscode-input-background);
+  /* border-color: var(--vscode-input-border); */
+}
+
+#chat-box {
+  margin-bottom: 80px;
+}
+
+#prompt-input {
+  padding: 12px 24px;
+  /* height: 40px; */
+  margin-top: 5px;
+  margin-bottom: 1px;
+  border: 1px solid var(--vscode-input-border);
+  border-radius: 40px;
+}
+
+#prompt-input::placeholder {
+  color: var(--vscode-input-placeholderForeground);
+}
+
+#bottom-box {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  padding: 0 10px;
+  bottom: 0px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--vscode-editorSuggestWidget-background);
+}
+
+#bottom-box::before {
+  content: "";
+  height: 40px;
+  width: 100%;
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0),
+    var(--vscode-editorSuggestWidget-background)
+  );
+}
+
+/* 定义动画 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.chat-answer {
+  padding: 20px;
+  background-color: var(--vscode-input-background);
+  animation: fadeIn 1s;
+  border-radius: 20px;
+  line-height: 24px;
+}
+
+.chat-question {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-left: 4px solid var(--vscode-focusBorder);
+  padding: 10px 10px 10px 10px;
+  animation: fadeIn 1s;
+}
+
+pre {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+pre code {
+  display: block;
+  padding: 0.5rem;
+  overflow-x: scroll;
+}
+
+code {
+  display: inline;
+  padding: 2px 4px 4px 2px;
+  background-color: var(--vscode-editorWidget-background);
+}
+
+.code-tool {
+  display: flex;
+  justify-content: end;
+  padding: 4px 6px 0px 0px;
+  gap: 10px;
+  background-color: var(--vscode-editorWidget-background);
+}
+
+.code-tool a {
+  font-size: 0.8rem;
+  color: var(--vscode-textLink-foreground);
+  font-family: var(--vscode-font-family);
+  font-weight: var(--vscode-font-weight);
+}
+
+.code-tool a:hover {
+  color: var(--vscode-textLink-activeForeground);
+}
+.code-tool a:active {
+  border: none;
+}
+
+.code-tool a:focus {
+  border: none;
+}
+
+#read-box p {
+  margin: 0 20px;
+  margin-bottom: 10px;
+  font-size: 1em;
+}
+
+#read-box span {
+  color: var(--vscode-textLink-foreground);
+}
+
+#read-box .welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: 1.6em;
+}
+
+.response-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#stop-response {
+  display: none;
+  width: 80px;
+  padding: 2px 6px 2px 6px;
+  color: var(--vscode-focusBorder);
+  border: 1px solid var(--vscode-focusBorder);
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+#stop-response:hover {
+  color: var(--vscode-errorForeground);
+  border: 1px solid var(--vscode-errorForeground);
+}
+
+#clear-msg {
+  color: var(--vscode-focusBorder);
+  margin-bottom: 5px;
+}
+
+#clear-msg:hover {
+  color: var(--vscode-errorForeground);
+}
+
+#login-btn {
+  padding: 4px;
+  border-radius: 4px;
+  color: var(--vscode-focusBorder);
+  border: 1px solid var(--vscode-focusBorder);
+}
+
+/* 样式调整 */
+label {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+#model-select {
+  width: 100px; /* 选择框宽度 */
+  font-size: 14px;
+  border: none;
+  box-shadow: none;
+  border-radius: 4px;
+  outline: none;
+  background-color: transparent; /* 透明背景 */
+}
+
+#model-select:active {
+  border: transparent; /* 边框颜色 */
+}
+
+.suggest {
+  margin: 0 10px;
+  animation: fadeIn 1s;
+}
+
+.suggest-item {
+  padding: 10px 20px;
+  background-color: var(--vscode-input-background);
+  border: 1px solid var(--vscode-editorSuggestWidget-border);
+  border-radius: 20px;
+  margin-bottom: 10px;
+  border: 1px solid var(--vscode-editorWidget-border);
+  transition: 0.2s all ease;
+}
+
+.suggest-item:hover {
+  cursor: pointer;
+  border-color: var(--vscode-sash-hoverBorder);
+  color: var(--vscode-sash-hoverBorder);
+}
+
+.input-container {
+  position: relative;
+}
+
+.input-pre-prompt {
+  position: absolute;
+  bottom: 48px;
+  left: 0;
+  width: 100%;
+  background-color: var(--vscode-input-background);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.input-pre-prompt p:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.input-pre-prompt p:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.input-pre-prompt p:nth-child(3) {
+  animation-delay: 0.1s;
+}
+
+.input-pre-prompt p:nth-child(4) {
+  animation-delay: 0.05s;
+}
+
+.input-pre-prompt p:nth-child(5) {
+  animation-delay: 0s;
+}
+
+.input-pre-prompt p {
+  opacity: 0;
+  display: inline-block;
+  padding: 12px 12px;
+  cursor: pointer;
+  animation: fadeIn 0.4s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.input-pre-prompt p:hover {
+  color: var(--vscode-textLink-foreground);
+}
+
+.button-other {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.button-other-box {
+  height: 28px;
+  padding: 0 8px;
+  background-color: var(--vscode-input-background);
+  border-radius: 6px;
+  margin-right: 8px;
+  transition: all 0.2s ease;
+}
+
+.button-other-box:active {
+  opacity: 0.6;
+}
